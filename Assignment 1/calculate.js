@@ -24,6 +24,9 @@ const result_c_minus = document.getElementById('result_c_minus');
 const result_d = document.getElementById('result_d');
 const result_f = document.getElementById('result_f');
 
+const new_grade_input = document.getElementById('new_grade_input');
+const submit_btn = document.getElementById('submit_btn')
+
 let max_value = Number(max.value);
 let a_plus_value = Number(a_plus.value);
 let a_value = Number(a.value);
@@ -269,6 +272,37 @@ grade_f.addEventListener('blur', () => {
   }
   else{
     f_value = userInput;
+  }
+})
+
+submit_btn.addEventListener('click', () => {
+  let new_grade = Number(new_grade_input.value)
+  if(isNaN(new_grade)){
+    alert('INVALID INPUT: You must enter a number');
+    new_grade_input.value = ''
+  }else if(new_grade < 0 || new_grade > 100){
+    alert('INVALID INPUT: Out of range');
+    new_grade_input.value = ''
+  }else{
+    grades.push(new_grade);
+    new_grade_input.value = ''
+    calculate(grades);
+  } 
+})
+new_grade_input.addEventListener('keypress', (e) => {
+  if(e.key === 'Enter'){
+    let new_grade = Number(new_grade_input.value)
+    if(isNaN(new_grade)){
+      alert('INVALID INPUT: You must enter a number');
+      new_grade_input.value = ''
+    }else if(new_grade < 0 || new_grade > 100){
+      alert('INVALID INPUT: Out of range');
+      new_grade_input.value = ''
+    }else{
+      grades.push(new_grade);
+      new_grade_input.value = ''
+      calculate(grades);
+    } 
   }
 })
 
