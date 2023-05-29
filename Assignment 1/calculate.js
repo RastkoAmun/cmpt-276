@@ -1,3 +1,4 @@
+//------------- Query Selectors -------------------------
 const grade_max = document.getElementById('max');
 const grade_a_plus = document.getElementById('a_plus');
 const grade_a = document.getElementById('a');
@@ -11,6 +12,18 @@ const grade_c_minus = document.getElementById('c_minus');
 const grade_d = document.getElementById('d');
 const grade_f = document.getElementById('f');
 
+const result_a_plus = document.getElementById('result_a_plus');
+const result_a = document.getElementById('result_a');
+const result_a_minus = document.getElementById('result_a_minus');
+const result_b_plus = document.getElementById('result_b_plus');
+const result_b = document.getElementById('result_b');
+const result_b_minus = document.getElementById('result_b_minus');
+const result_c_plus = document.getElementById('result_c_plus');
+const result_c = document.getElementById('result_c');
+const result_c_minus = document.getElementById('result_c_minus');
+const result_d = document.getElementById('result_d');
+const result_f = document.getElementById('result_f');
+
 let max_value = Number(max.value);
 let a_plus_value = Number(a_plus.value);
 let a_value = Number(a.value);
@@ -23,9 +36,6 @@ let c_value = Number(c.value);
 let c_minus_value = Number(c_minus.value);
 let d_value = Number(d.value);
 let f_value = Number(f.value);
-
-console.log(a_plus_value)
-console.log(b_plus_value)
 
 let grades = [65.95, 56.98, 78.62, 96.1, 90.3, 72.24, 92.34, 60.00, 81.43, 86.22, 88.33, 9.03, 49.93, 52.34, 53.11, 50.10, 88.88, 55.32, 55.69, 61.68, 70.44, 70.54, 90.0, 71.11, 80.01];
 
@@ -46,6 +56,7 @@ grade_max.addEventListener('blur', () => {
   }
   else{
     max_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -65,6 +76,7 @@ grade_a_plus.addEventListener('blur', () => {
   }
   else{
     a_plus_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -84,6 +96,7 @@ grade_a.addEventListener('blur', () => {
   }
   else{
     a_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -103,6 +116,7 @@ grade_a_minus.addEventListener('blur', () => {
   }
   else{
     a_minus_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -258,47 +272,66 @@ grade_f.addEventListener('blur', () => {
   }
 })
 
+calculate(grades);
 
 
+// ---------------- Functions --------------------
+function calculate(grades){
+  reserInnerHTML();
+  grades.forEach(grade => {
+    checkGrade(grade);
+  });
+}
 
-
-// ---------------- Utility Functions --------------------
-function checkIfNumber(input){
-  if(!isNaN(input)) {
-    return true;
-  }else{
-    return false;
+function checkGrade(grade) {
+  if(grade >= grade_a_plus.value && grade <= grade_max.value){
+    result_a_plus.innerHTML += 'O';
+  }
+  else if(grade >= grade_a.value && grade < grade_a_plus.value){
+    result_a.innerHTML += 'O';
+  }
+  else if(grade >= grade_a_minus.value && grade < grade_a.value){
+    result_a_minus.innerHTML += 'O';
+  }
+  else if(grade >= grade_b_plus.value && grade < grade_a_minus.value){
+    result_b_plus.innerHTML += 'O';
+  }
+  else if(grade >= grade_b.value && grade < grade_b_plus.value){
+    result_b.innerHTML += 'O';
+  }
+  else if(grade >= grade_b_minus.value && grade < grade_b.value){
+    result_b_minus.innerHTML += 'O';
+  }
+  else if(grade >= grade_c_plus.value && grade < grade_b_minus.value){
+    result_c_plus.innerHTML += 'O';
+  }
+  else if(grade >= grade_c.value && grade < grade_c_plus.value){
+    result_c.innerHTML += 'O';
+  }
+  else if(grade >= grade_c_minus.value && grade < grade_c.value){
+    result_c_minus.innerHTML += 'O';
+  }
+  else if(grade >= grade_d.value && grade < grade_c_minus.value){
+    result_d.innerHTML += 'O';
+  }
+  else{
+    result_f.innerHTML += 'O';
   }
 }
 
-function checkIfValid(){
-
+function reserInnerHTML(){
+  result_a_plus.innerHTML = '';
+  result_a.innerHTML = '';
+  result_a_minus.innerHTML = '';
+  result_b_plus.innerHTML = '';
+  result_b.innerHTML = '';
+  result_b_minus.innerHTML = '';
+  result_c_plus.innerHTML = '';
+  result_c.innerHTML = '';
+  result_c_minus.innerHTML = '';
+  result_d.innerHTML = '';
+  result_f.innerHTML = '';
 }
-
-
-function doChanges(input){
-  let userInput = input.value;
-  input.value = userInput;
-  // printValue(input.value);
-  console.log(userInput)
-  console.log('a')
-}
-grade_a_plus.addEventListener('blur', doChanges(grade_a_plus))
-
-
-const checkGrade = (grade) => {
-  if(grade > grade_a_plus.value && grade <= grade_max.value){
-    console.log('Adding to MAX')
-  }
-  if(grade > grade_a.value && grade <= grade_a_plus.value){
-    console.log('Adding to A+')
-  }
-  if(grade > grade_a_minus.value && grade <= grade_a.value){
-    console.log('Adding to A')
-  }
-}
-
-checkGrade('96.0');
 
 
 
