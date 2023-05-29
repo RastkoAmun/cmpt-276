@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./histogram.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="container">
+
+      <div id="lower-bounds">
+        <h3>Lower bounds</h3>
+        <table>
+          <div class="inner-table">
+            <tr>
+              <td>Max</td>
+              <td><input id='max' type="text" value="100.00" /></td>
+            </tr>
+            <tr>
+              <td>A+</td>
+              <td><input id='a_plus' type="text" value="95.00"/></td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td><input id='a' type="text" value="90.00"/></td>
+            </tr>
+            <tr>
+              <td>A-</td>
+              <td><input id='a_minus' type="text" value="85.00"/></td>
+            </tr>
+            <tr>
+              <td>B+</td>
+              <td><input id='b_plus' type="text" value="80.00"/></td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td><input id='b' type="text" value="75.00"/></td>
+            </tr>
+            <tr>
+              <td>B-</td>
+              <td><input id='b_minus' type="text" value="70.00"/></td>
+            </tr>
+            <tr>
+              <td>C+</td>
+              <td><input id='c_plus' type="text" value="65.00"/></td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td><input id='c' type="text" value="60.00"/></td>
+            </tr>
+            <tr>
+              <td>C-</td>
+              <td><input id='c_minus' type="text" value="55.00"/></td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td><input id='d' type="text" value="50.00"/></td>
+            </tr>
+            <tr>
+              <td>F</td>
+              <td><input id='f' type="text" value="0.00"/></td>
+            </tr>
+          </div>
+        </table>
+      </div>
+
+      <div id="histogram">
+        <h3>Histogram</h3>
+        <table class="histogram-table">
+          <tr>
+            <td>A+</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>A-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>B+</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>B-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>C+</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>C-</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td><div>OO</div></td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td><div>OOO</div></td>
+          </tr>
+        </table>
+
+        <div class="grade-form">
+          New Grade: <input />
+          <button class="btn">Submit</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./calculate.js"></script>
+</body>
+
+</html>

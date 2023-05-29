@@ -1,0 +1,67 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* ---------------- Main elements ------------------ */
+html, body{
+  background-color: #d6e2e8;
+}
+
+table{
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+tr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+input{
+  width: 100px;
+  height: 30px;
+  text-align: center;
+}
+
+/* ------------------- IDs and Classes ---------------- */
+.container{
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  gap: 100px;
+}
+
+#lower-bounds h3, #histogram h3{
+  color: #A6192E;
+}
+
+.grade-form{
+  width: 200px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn{
+  margin-top: 20px;
+  background-color: #A6192E;
+  color: white;
+  font-size: 20px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn:hover{
+  background-color: #CC0633;
+  cursor: pointer;
+}
+
+.histogram-table tr{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
