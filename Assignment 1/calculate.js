@@ -139,6 +139,7 @@ grade_b_plus.addEventListener('blur', () => {
   }
   else{
     b_plus_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -158,6 +159,7 @@ grade_b.addEventListener('blur', () => {
   }
   else{
     b_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -177,6 +179,7 @@ grade_b_minus.addEventListener('blur', () => {
   }
   else{
     b_minus_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -196,6 +199,7 @@ grade_c_plus.addEventListener('blur', () => {
   }
   else{
     c_plus_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -215,6 +219,7 @@ grade_c.addEventListener('blur', () => {
   }
   else{
     c_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -234,6 +239,7 @@ grade_c_minus.addEventListener('blur', () => {
   }
   else{
     c_minus_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -253,6 +259,7 @@ grade_d.addEventListener('blur', () => {
   }
   else{
     d_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -272,6 +279,7 @@ grade_f.addEventListener('blur', () => {
   }
   else{
     f_value = userInput;
+    calculate(grades);
   }
 })
 
@@ -282,6 +290,9 @@ submit_btn.addEventListener('click', () => {
     new_grade_input.value = ''
   }else if(new_grade < 0 || new_grade > 100){
     alert('INVALID INPUT: Out of range');
+    new_grade_input.value = ''
+  }else if(new_grade_input.value === ''){
+    alert('INVALID INPUT: You cannot enter empty field');
     new_grade_input.value = ''
   }else{
     grades.push(new_grade);
@@ -297,6 +308,9 @@ new_grade_input.addEventListener('keypress', (e) => {
       new_grade_input.value = ''
     }else if(new_grade < 0 || new_grade > 100){
       alert('INVALID INPUT: Out of range');
+      new_grade_input.value = ''
+    }else if(new_grade_input.value === ''){
+      alert('INVALID INPUT: You cannot enter empty field');
       new_grade_input.value = ''
     }else{
       grades.push(new_grade);
@@ -366,6 +380,3 @@ function reserInnerHTML(){
   result_d.innerHTML = '';
   result_f.innerHTML = '';
 }
-
-
-
